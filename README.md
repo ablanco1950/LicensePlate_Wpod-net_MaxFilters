@@ -40,4 +40,6 @@ References:
  https://github.com/ablanco1950/LicensePlate_Labeled_MaxFilters
  
  https://www.roboflow.com
+ 
+ https://ksingh7.medium.com/part-i-using-a-pre-trained-keras-model-for-license-plate-detection-7687739af758
 
