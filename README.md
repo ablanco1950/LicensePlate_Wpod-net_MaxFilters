@@ -25,7 +25,7 @@ GetNumberSpanishLicensePlate_Wpod-net_MaxFilters.py
 
 Note:
 the module local_utils.py, downloaded from https://github.com/quangnhat185/Plate_detect_and_recognize has been  retouched  on line 175 to avoid termination
-in case of car license plate not detected. In this manner, the recognition of license is forced increasin the parameter Dmin, as is explained in https://medium.com/@quangnhatnguyenle/detect-and-recognize-vehicles-license-plate-with-machine-learning-and-python-part-1-detection-795fda47e922
+in case of car license plate not detected. In this manner, the recognition of license is forced increasin automatically the parameter Dmin, as is explained in https://medium.com/@quangnhatnguyenle/detect-and-recognize-vehicles-license-plate-with-machine-learning-and-python-part-1-detection-795fda47e922
 "If there is no plate founded, the program would warn you with an error “No License plate is founded!”. In this case, try to increase Dmin value to adjust the boundary dimension."
 
 pytesseract is used as OCR
