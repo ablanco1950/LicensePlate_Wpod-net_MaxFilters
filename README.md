@@ -32,6 +32,7 @@ in case of car license plate not detected. In this manner, the recognition of li
 
 pytesseract is used as OCR
 
+As output, the LicenseResults.txt file is also obtained with the relation between true license plate and predicted license plate.
 
 References:
 
