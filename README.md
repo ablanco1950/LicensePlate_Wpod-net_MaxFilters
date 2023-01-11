@@ -19,6 +19,8 @@ import re
 
 import pytesseract
 
+import imutils
+
 Execute:
 
 GetNumberSpanishLicensePlate_Wpod-net_MaxFilters.py
