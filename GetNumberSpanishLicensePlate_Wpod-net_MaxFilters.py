@@ -16,7 +16,7 @@ from keras.models import model_from_json
 
 import os
 import re
-#import imutils
+import imutils
 import pytesseract
 
 # Test images
@@ -84,7 +84,7 @@ def GetRotationImage(image):
 
 
 def Detect_Spanish_LicensePlate(Text):
-    #return 1
+    
     if len(Text) != 7: return -1
     if (Text[0] < "0" or Text[0] > "9" ) : return -1 
     if (Text[1] < "0" or Text[2] > "9" ) : return -1   
@@ -96,6 +96,7 @@ def Detect_Spanish_LicensePlate(Text):
     return 1
 
 def ProcessText(text):
+    
     if len(text)  > 7:
        text=text[len(text)-7:] 
     if Detect_Spanish_LicensePlate(text)== -1: 
@@ -397,7 +398,7 @@ def FindLicenseNumber (gray,  License, x_resize, y_resize, \
     #gray = cv2.resize(gray, (X_resize,Y_resize), interpolation = cv2.INTER_AREA)
     #cv2.imshow("Gray", gray)
     #cv2.waitKey(0)
-    """
+    
     rotation, spectrum, frquency =GetRotationImage(gray)
     rotation=90 - rotation
     #print("Car" + str(NumberImageOrder) + " Brillo : " +str(SumBrightnessLic) +   
@@ -405,7 +406,7 @@ def FindLicenseNumber (gray,  License, x_resize, y_resize, \
     if (rotation > 0 and rotation < 30)  or (rotation < 0 and rotation > -30):
       
         gray=imutils.rotate(gray,angle=rotation)
-    """
+    
     TabLicensesFounded=[]
     ContLicensesFounded=[]
     
