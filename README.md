@@ -1,5 +1,5 @@
 # LicensePlate_Wpod-net_MaxFilters
-It's a Wpod-net demo, downloaded from https://github.com/quangnhat185/Plate_detect_and_recognize,   for the recognition of car license plates, the use of labeled images is avoided, although the precision is lower. Testing a sample of 21 images of Spanish license plates (NNNNAAA format), 14 hits are obtained. With https://github.com/ablanco1950/LicensePlate_Labeled_MaxFilters that uses the same images, but labeled, and also an exhaustive number of filters,  17 hits are reached
+It's a Wpod-net demo, downloaded from https://github.com/quangnhat185/Plate_detect_and_recognize,   for the recognition of car license plates, the use of labeled images is avoided, although the precision is lower. Testing a sample of 21 images of Spanish license plates (NNNNAAA format), 16 hits are obtained. While with https://github.com/ablanco1950/LicensePlate_Labeled_MaxFilters that uses the same images, but labeled, and also an exhaustive number of filters,  17 hits are reached
 
 Requirements:
 
