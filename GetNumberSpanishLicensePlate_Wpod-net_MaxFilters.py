@@ -679,7 +679,16 @@ with open( "LicenseResults.txt" ,"w") as  w:
     for i in range(len(images)):
         #img = preprocess_image(images[i],True)
         img = cv2.cvtColor(images[i], cv2.COLOR_BGR2GRAY)
-        
+        """
+        rotation, spectrum, frquency =GetRotationImage(img)
+        rotation=90 - rotation
+        #print("Car" + str(NumberImageOrder) + " Brillo : " +str(SumBrightnessLic) +   
+        #      " Desviacion : " + str(DesvLic))
+        if (rotation > 0 and rotation < 30)  or (rotation < 0 and rotation > -30):
+          
+           images[i]=imutils.rotate(images[i],angle=rotation)     
+           img = cv2.cvtColor(images[i], cv2.COLOR_BGR2GRAY)
+        """
         LpImg=get_license(img)
         if len(LpImg)== 0:
          ContNoDetected=ContNoDetected+1      
