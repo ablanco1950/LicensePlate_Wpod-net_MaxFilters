@@ -389,16 +389,18 @@ def FindLicenseNumber (gray,  License, x_resize, y_resize, \
     
     #print(gray)
     
-    #X_resize=x_resize
-    #Y_resize=y_resize
+    X_resize=x_resize
+    Y_resize=y_resize
     print(gray.shape) 
+    Resize_xfactor=1.5
+    Resize_yfactor=1.5
     
-    #gray=cv2.resize(gray,None,fx=Resize_xfactor,fy=Resize_yfactor,interpolation=cv2.INTER_CUBIC)
+    gray=cv2.resize(gray,None,fx=Resize_xfactor,fy=Resize_yfactor,interpolation=cv2.INTER_CUBIC)
     
     #gray = cv2.resize(gray, (X_resize,Y_resize), interpolation = cv2.INTER_AREA)
     #cv2.imshow("Gray", gray)
     #cv2.waitKey(0)
-    
+    """
     rotation, spectrum, frquency =GetRotationImage(gray)
     rotation=90 - rotation
     #print("Car" + str(NumberImageOrder) + " Brillo : " +str(SumBrightnessLic) +   
@@ -406,7 +408,7 @@ def FindLicenseNumber (gray,  License, x_resize, y_resize, \
     if (rotation > 0 and rotation < 30)  or (rotation < 0 and rotation > -30):
       
         gray=imutils.rotate(gray,angle=rotation)
-    
+    """
     TabLicensesFounded=[]
     ContLicensesFounded=[]
     
@@ -666,8 +668,17 @@ def FindLicenseNumber (gray,  License, x_resize, y_resize, \
                print(Licenses[i] + " detected as "+ text) 
               
         
-    return TabLicensesFounded, ContLicensesFounded          
-           
+    return TabLicensesFounded, ContLicensesFounded 
+
+# https://medium.com/@sachitlele311/basics-of-image-preprocessing-using-opencv-eebfd32f68b7        
+def rotate(img2, angle, Rotpoint=None): 
+  (height, width)  = img2.shape[:2]   
+  if Rotpoint==None :
+      Rotpoint=(width//2, height//2)
+      Rotmat=cv2.getRotationMatrix2D(Rotpoint, angle, 1.0)
+      Rotpoint=(width//2, height//2)
+      dimensions=(width, height)
+      return cv2.warpAffine(img2, Rotmat, dimensions)
 # MAIN  
         
 ContDetected=0
@@ -686,8 +697,10 @@ with open( "LicenseResults.txt" ,"w") as  w:
         #      " Desviacion : " + str(DesvLic))
         if (rotation > 0 and rotation < 30)  or (rotation < 0 and rotation > -30):
           
-           images[i]=imutils.rotate(images[i],angle=rotation)     
-           img = cv2.cvtColor(images[i], cv2.COLOR_BGR2GRAY)
+           #images[i]=imutils.rotate(images[i],angle=rotation)     
+           #img = cv2.cvtColor(images[i], cv2.COLOR_BGR2GRAY)
+           image=rotate(images[i], rotation)
+           img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         """
         LpImg=get_license(img)
         if len(LpImg)== 0:
