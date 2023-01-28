@@ -11,8 +11,6 @@ import cv2
 
 import numpy as np
 
-from local_utils import detect_lp
-
 from os.path import splitext, basename
 
 from keras.models import model_from_json
