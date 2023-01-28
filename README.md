@@ -8,18 +8,24 @@ Download all the files to a directory and unzip the folder with the images to te
 There must be installed the modules that allow:
 
 import cv2
+
 import numpy as np
 
 from local_utils import detect_lp
+
 from os.path import splitext, basename
+
 from keras.models import model_from_json
 
 import os
+
 import re
 
 import pytesseract
 
 import imutils
+
+import tensorflow (it appears that tensorflow only works with 64-bit)
 
 Execute:
 
