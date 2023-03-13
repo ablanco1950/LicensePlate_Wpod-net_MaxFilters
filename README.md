@@ -69,3 +69,5 @@ https://programmerclick.com/article/89421544914/
 https://anishgupta1005.medium.com/building-an-optical-character-recognizer-in-python-bbd09edfe438
 
 https://datasmarts.net/es/como-usar-el-detector-de-puntos-clave-mser-en-opencv/https://felipemeganha.medium.com/detecting-handwriting-regions-with-opencv-and-python-ff0b1050aa4e
+
+Note: On 03/13/2023, the best results are obtained with the https://github.com/ablanco1950/LicensePlate_Yolov8_Filters_PaddleOCR project, which would replace this one.
